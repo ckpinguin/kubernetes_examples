@@ -19,7 +19,7 @@ echo "Getting Token to login:"
 
 microk8s kubectl -n kubernetes-dashboard describe secret $(microk8s kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
-echo "You can use this Token to login at https://localhost:10443"
+echo "You can use this Token to login to the Kubernetes-Dashboard at https://localhost:10443"
 
 
 
