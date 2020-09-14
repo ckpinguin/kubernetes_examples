@@ -101,3 +101,4 @@ spec:
     plural: traefikservices
     singular: traefikservice
   scope: Namespaced
+
