@@ -1,10 +1,10 @@
 #!/bin/bash
-echo "Enabling kubernetes addons"
+echo "Enabling kubernetes addons:"
 microk8s enable dashboard dns registry rbac
 
 sleep 10
 
-echo "Creating Kubernetes-Dashboard objects"
+echo "Creating Kubernetes-Dashboard objects:"
 microk8s kubectl apply -f kubernetes-dashboard-namespace.yml
 microk8s kubectl apply -f kubernetes-dashboard-admin-user-service-account.yml
 microk8s kubectl apply -f kubernetes-dashboard-admin-user-clusterrole-binding.yml
@@ -12,7 +12,7 @@ microk8s kubectl apply -f kubernetes-dashboard-admin-user-clusterrole-binding.ym
 echo "Waiting 180s for all pods to stabilize..."
 sleep 180
 
-echo "Forwarding Kubernetes-Dashboard to localhost"
+echo "Forwarding Kubernetes-Dashboard to localhost:"
 microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443&
 
 echo "Getting Token to login:"
