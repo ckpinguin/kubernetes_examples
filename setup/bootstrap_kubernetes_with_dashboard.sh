@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Uncomment the following to reinstall microk8s:
+# echo "Removing microk8s..."
+# sudo snap remove microk8s
+# echo "Installing microk8s..."
+# sudo snap install microk8s --classic
+
 echo "Enabling kubernetes addons:"
 microk8s enable dashboard dns registry rbac
 
